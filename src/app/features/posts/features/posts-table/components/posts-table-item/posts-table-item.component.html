@@ -1,0 +1,17 @@
+@if (post) {
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ post.userId }}</mat-card-title>
+      <mat-card-subtitle>{{ post.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{ post.body }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+} @else {
+  <div class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+}

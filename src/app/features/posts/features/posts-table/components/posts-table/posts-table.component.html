@@ -1,0 +1,29 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input [formControl]="filterForm" matInput type="text">
+</mat-form-field>
+
+<table [dataSource]="posts" class="mat-elevation-z8" mat-table>
+
+  <ng-container matColumnDef="id">
+    <th *matHeaderCellDef mat-header-cell> ID</th>
+    <td *matCellDef="let element" mat-cell> {{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="userId">
+    <th *matHeaderCellDef mat-header-cell> User ID</th>
+    <td *matCellDef="let element" mat-cell> {{ element.userId }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th *matHeaderCellDef mat-header-cell> Title</th>
+    <td *matCellDef="let element" mat-cell> {{ element.title }}</td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" [routerLink]="row.id" class="cursor-pointer" mat-row></tr>
+
+  <tr *matNoDataRow class="mat-row">
+    <td class="mat-cell" colspan="4">No data matching the filter "{{ filterForm.value }}"</td>
+  </tr>
+</table>
