@@ -3,7 +3,7 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors, withFetch } from '@angular/common/http';
-import { postInterceptor } from './features/core/interceptors/post.interceptor';
+import { postInterceptor } from './core/interceptors/post.interceptor';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
